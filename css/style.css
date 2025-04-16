@@ -1,4 +1,7 @@
     /* Custom animations */
+    body{
+        font-family: 'Inter', sans-serif;
+    }
     @keyframes slideDown {
     from {
     opacity: 0;
