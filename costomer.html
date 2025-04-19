@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us -FlexRentz</title>
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="src/output.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="bg-gray-50 font-inter">
+    <!-- Navigation Bar -->
+    <nav class="bg-white p-4 md:p-6 flex justify-between items-center shadow-lg sticky top-0 z-50 not-visited:">
+        <!-- Logo -->
+        <div>
+            <img src="images/flexrentz.png" alt="FlexRentz Logo"
+                class="h-auto md:h-auto transition-transform duration-300 hover:scale-105 cursor-pointer w-35">
+        </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8 font-medium text-gray-800">
+            <a href="index.html" class="nav-item hover:text-green-600 transition-all duration-300">Home</a>
+
+            <!-- Desktop Dropdown Menu -->
+            <div class="relative dropdown-container">
+                <a href="aboutus.html"
+                    class="nav-item hover:text-green-600 transition-all duration-300 flex items-center">
+                    About Us
+                    <svg class="w-4 h-4 ml-1 transition-transform" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </a>
+                <div class="dropdown-menu absolute bg-white shadow-xl rounded-lg mt-2 w-48">
+                    <a href="faqs.html"
+                        class="block px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200">
+                        FAQs
+                    </a>
+                    <a href="services.html"
+                        class="block px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200">
+                        Customer Policy
+                    </a>
+                </div>
+            </div>
+
+            <a href="services.html" class="nav-item hover:text-green-600 transition-all duration-300">Book a Service</a>
+            <a href="gallery.html" class="nav-item hover:text-green-600 transition-all duration-300">Pricing</a>
+            <a href="contactus.html" class="nav-item hover:text-green-600 transition-all duration-300">Contact Us</a>
+
+            <div>
+                <a href="login.html">
+                    <button
+                        class="bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 hover:shadow-lg transform transition-all duration-300 hover:scale-105 font-bold text-sm md:text-base">
+                        Book Now
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <!-- CTA Button -->
+
+
+        <!-- Mobile Menu Toggle -->
+        <div class="md:hidden">
+            <button class="hamburger focus:outline-none" aria-label="Toggle menu">
+                <span class="block w-6 h-0.5 bg-gray-800 mb-1.5"></span>
+                <span class="block w-6 h-0.5 bg-gray-800 mb-1.5"></span>
+                <span class="block w-6 h-0.5 bg-gray-800"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div class="mobile-menu hidden md:hidden bg-white shadow-lg absolute top-16 left-0 right-0 z-50 sticky">
+        <div class="flex flex-col p-4 space-y-4 font-medium text-gray-800">
+            <a href="index.html" class="hover:text-green-600 transition-all duration-300">Home</a>
+
+            <!-- Mobile Dropdown -->
+            <div>
+                <button
+                    class="flex items-center justify-between w-full hover:text-green-600 transition-all duration-300 mobile-dropdown-toggle">
+                    About Us
+                    <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+                <div class="mobile-dropdown hidden mt-2 space-y-2">
+                    <a href="faqs.html"
+                        class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200">
+                        FAQs
+                    </a>
+                    <a href="services.html"
+                        class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200">
+                        Customer Policy
+                    </a>
+                </div>
+            </div>
+
+            <a href="services.html" class="hover:text-green-600 transition-all duration-300">Book a Service</a>
+            <a href="gallery.html" class="hover:text-green-600 transition-all duration-300">Pricing</a>
+            <a href="contactus.html" class="hover:text-green-600 transition-all duration-300">Contact Us</a>
+        </div>
+    </div>
+
+    <footer class="bg-green-600 text-white pt-16 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <!-- Brand and description -->
+                <div class="space-y-4">
+                    <div class="flex items-center">
+                        <img src="images/flexrentz.png" alt="Flexrentz Logo" class="h-10">
+                    </div>
+                    <p class="text-white text-sm leading-relaxed">
+                        Jalingo's premier cleaning service with a dedicated team, modern tools, and meticulous attention
+                        to
+                        detail for spotless results every time.
+                    </p>
+
+                </div>
+
+                <!-- Services -->
+                <div class="space-y-4">
+                    <h3 class="font-semibold text-white uppercase tracking-wider text-sm">Services</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-white hover:text-white transition-colors text-sm">Book a service</a>
+                        </li>
+                        <li><a href="#" class="text-white hover:text-white transition-colors text-sm">Customer
+                                policy</a></li>
+                        <li><a href="#" class="text-white hover:text-white transition-colors text-sm">Pricing</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="space-y-4">
+                    <h3 class="font-semibold text-white uppercase tracking-wider text-sm">Quik Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-white hover:text-white transition-colors text-sm">Home</a>
+                        </li>
+                        <li><a href="contactus.html"
+                                class="text-white hover:text-white transition-colors text-sm">Contact Us</a>
+                        </li>
+                        <li><a href="aboutus.html" class="text-white hover:text-white transition-colors text-sm">About
+                                Us</a>
+                        </li>
+                        <li><a href="faqs.html" class="text-white hover:text-white transition-colors text-sm">FAQs</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="space-y-4">
+                    <h3 class="font-semibold text-white uppercase tracking-wider text-sm">Follow us</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-white text-sm">
+                            <a href="#">
+                                <i class="bi bi-facebook text-2.5xl"></i> Facebook
+                            </a>
+                        </li>
+                        <li class="flex items-start gap-3 text-white text-sm">
+                            <a href="#">
+                                <i class="bi bi-twitter text-2.5xl"></i> Twitter
+                            </a>
+                        </li>
+                        <li class="flex items-start gap-3 text-white text-sm">
+                            <a href="#">
+                                <i class="bi bi-instagram text-2.5xl"></i> Instagram
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="mt-16 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-white text-sm">© 2025 Flexrentz. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-white hover:text-white transition-colors text-sm">Privacy Policy</a>
+                    <a href="#" class="text-white hover:text-white transition-colors text-sm">Terms of Service</a>
+                    <a href="#" class="text-white hover:text-white transition-colors text-sm">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script/home.js"></script>
+</body>
+
+</html>

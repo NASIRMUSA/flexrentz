@@ -29,7 +29,7 @@
 
             <!-- Desktop Dropdown Menu -->
             <div class="relative dropdown-container">
-                <a href="about.html"
+                <a href="aboutus.html"
                     class="nav-item hover:text-green-600 transition-all duration-300 flex items-center">
                     About Us
                     <svg class="w-4 h-4 ml-1 transition-transform" fill="none" stroke="currentColor"
@@ -38,7 +38,7 @@
                     </svg>
                 </a>
                 <div class="dropdown-menu absolute bg-white shadow-xl rounded-lg mt-2 w-48">
-                    <a href="services.html"
+                    <a href="faqs.html"
                         class="block px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200">
                         FAQs
                     </a>
@@ -49,17 +49,18 @@
                 </div>
             </div>
 
-            <a href="services.html" class="nav-item hover:text-green-600 transition-all duration-300">Book a Service</a>
-            <a href="gallery.html" class="nav-item hover:text-green-600 transition-all duration-300">Pricing</a>
-            <a href="contact.html" class="nav-item hover:text-green-600 transition-all duration-300">Contact Us</a>
+            <a href="#" id="openModalBtn" class="nav-item hover:text-green-600 transition-all duration-300">Book a
+                Service</a>
+            <a href="pricing.html" class="nav-item hover:text-green-600 transition-all duration-300">Pricing</a>
+            <a href="contactus.html" class="nav-item hover:text-green-600 transition-all duration-300">Contact Us</a>
 
             <div>
-                <a href="login.html">
-                    <button
-                        class="bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 hover:shadow-lg transform transition-all duration-300 hover:scale-105 font-bold text-sm md:text-base">
-                        Book Now
-                    </button>
-                </a>
+
+                <button id="openModalBtn"
+                    class="bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 hover:shadow-lg transform transition-all duration-300 hover:scale-105 font-bold text-sm md:text-base">
+                    Book Now
+                </button>
+
             </div>
         </div>
 
@@ -91,7 +92,7 @@
                     </svg>
                 </button>
                 <div class="mobile-dropdown hidden mt-2 space-y-2">
-                    <a href="services.html"
+                    <a href="faqs.html"
                         class="block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600 transition-all duration-200">
                         FAQs
                     </a>
@@ -102,9 +103,9 @@
                 </div>
             </div>
 
-            <a href="services.html" class="hover:text-green-600 transition-all duration-300">Book a Service</a>
+            <a href="#" id="openModalBtn" class="hover:text-green-600 transition-all duration-300">Book a Service</a>
             <a href="gallery.html" class="hover:text-green-600 transition-all duration-300">Pricing</a>
-            <a href="contact.html" class="hover:text-green-600 transition-all duration-300">Contact Us</a>
+            <a href="contactus.html" class="hover:text-green-600 transition-all duration-300">Contact Us</a>
         </div>
     </div>
 
@@ -130,11 +131,12 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4 pt-6">
-                    <button class="bg-green-500 hover:bg-green-600 text-white font-semibold py-5 px-12 rounded-full 
-                      transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1">
-                        Book Now!
-                    </button>
-
+                    <a href="#" id="openModalBtn">
+                        <button class="bg-green-500 hover:bg-green-600 text-white font-semibold py-5 px-12 rounded-full 
+                      transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1 cursor-pointer">
+                            Book Now!
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -429,6 +431,273 @@
                 </div>
             </div>
     </section>
+    <button id="openModalBtn"
+        class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+        Book Cleaning Service
+    </button>
+
+    <!-- Modal Backdrop -->
+    <div id="modalBackdrop"
+        class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300">
+
+        <!-- State Selection Modal -->
+        <div id="stateModal"
+            class="bg-white rounded-xl shadow-2xl w-full max-w-md mx-4 transform scale-95 opacity-0 transition-all duration-300">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800">Select Location</h3>
+                    <button id="closeModal" class="text-gray-500 hover:text-gray-700">
+                        <i class="bi bi-x-lg text-xl"></i>
+                    </button>
+                </div>
+
+                <div class="space-y-4">
+                    <button
+                        class="state-option w-full text-left p-4 border border-green-200 rounded-xl hover:bg-green-50 transition-colors duration-200 flex items-center gap-3"
+                        data-state="Taraba">
+                        <i class="bi bi-geo-alt text-green-600"></i>
+                        <span class="font-medium">Taraba State</span>
+                    </button>
+
+                    <div class="text-center text-gray-500 py-2">
+                        More locations coming soon!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Service Selection Modal -->
+        <div id="serviceModal" class="bg-white rounded-xl shadow-2xl w-full max-w-md mx-4 hidden">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800">Select Service</h3>
+                        <div class="flex items-center text-green-600 text-sm mt-1">
+                            <i class="bi bi-geo-alt mr-1"></i>
+                            <span id="selectedState">Taraba State</span>
+                        </div>
+                    </div>
+                    <button id="backToState" class="text-gray-500 hover:text-gray-700">
+                        <i class="bi bi-arrow-left text-xl"></i>
+                    </button>
+                </div>
+
+                <div class="space-y-3">
+                    <button
+                        class="service-option w-full text-left p-4 border border-gray-200 rounded-xl hover:border-green-300 hover:bg-green-50 transition-all duration-200 flex items-center gap-4">
+                        <div class="bg-green-100 p-2 rounded-lg">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2503/2503808.png" alt="Cleaning"
+                                class="w-8 h-8">
+                        </div>
+                        <span class="font-medium">Lite Regular Cleaning</span>
+                    </button>
+
+                    <button
+                        class="service-option w-full text-left p-4 border border-gray-200 rounded-xl hover:border-green-300 hover:bg-green-50 transition-all duration-200 flex items-center gap-4">
+                        <div class="bg-green-100 p-2 rounded-lg">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2503/2503808.png" alt="Cleaning"
+                                class="w-8 h-8">
+                        </div>
+                        <span class="font-medium">Deep Cleaning</span>
+                    </button>
+
+                    <button
+                        class="service-option w-full text-left p-4 border border-gray-200 rounded-xl hover:border-green-300 hover:bg-green-50 transition-all duration-200 flex items-center gap-4">
+                        <div class="bg-green-100 p-2 rounded-lg">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2503/2503808.png" alt="Cleaning"
+                                class="w-8 h-8">
+                        </div>
+                        <span class="font-medium">Rugs and Carpet Cleaning</span>
+                    </button>
+
+                    <button
+                        class="service-option w-full text-left p-4 border border-gray-200 rounded-xl hover:border-green-300 hover:bg-green-50 transition-all duration-200 flex items-center gap-4">
+                        <div class="bg-green-100 p-2 rounded-lg">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2503/2503808.png" alt="Cleaning"
+                                class="w-8 h-8">
+                        </div>
+                        <span class="font-medium">Fumigation</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Room Selection Modal -->
+        <div id="roomModal" class="bg-white rounded-xl shadow-2xl w-full max-w-4xl mx-4 hidden overflow-y-auto"
+            style="max-height: 80vh;">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800">Select Room Type</h3>
+                        <div class="flex items-center text-green-600 text-sm mt-1">
+                            <span id="selectedService">Lite Regular Cleaning</span>
+                        </div>
+                    </div>
+                    <button id="backToService" class="text-gray-500 hover:text-gray-700">
+                        <i class="bi bi-arrow-left text-xl"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div
+                        class="room-card p-4 border border-gray-200 rounded-xl hover:border-green-300 hover:bg-green-50 transition-all duration-200 cursor-pointer">
+                        <h4 class="font-bold text-lg mb-2">1 Bedroom Flat</h4>
+                        <p class="text-gray-600 text-sm mb-3">Our Lite Regular cleaning ensures your Cleaning Pro cleans
+                            and tidies home surfaces with available products. Service duration up to 1hr 30mins.</p>
+                        <p class="text-green-600 font-medium"><span class="text-gray-500 text-sm">Starts at</span>
+                            ₦9,136.43</p>
+                    </div>
+
+                    <div
+                        class="room-card p-4 border border-gray-200 rounded-xl hover:border-green-300 hover:bg-green-50 transition-all duration-200 cursor-pointer">
+                        <h4 class="font-bold text-lg mb-2">2 Bedroom Flat</h4>
+                        <p class="text-gray-600 text-sm mb-3">Our Lite Regular cleaning ensures your Cleaning Pro cleans
+                            and tidies home surfaces. Service duration up to 2hrs 30mins.</p>
+                        <p class="text-green-600 font-medium"><span class="text-gray-500 text-sm">Starts at</span>
+                            ₦11,286.43</p>
+                    </div>
+
+                    <div
+                        class="room-card p-4 border border-gray-200 rounded-xl hover:border-green-300 hover:bg-green-50 transition-all duration-200 cursor-pointer">
+                        <h4 class="font-bold text-lg mb-2">3 Bedroom Flat</h4>
+                        <p class="text-gray-600 text-sm mb-3">Our Lite Regular cleaning ensures your Cleaning Pro cleans
+                            and tidies home surfaces. Service duration up to 2hrs 30mins.</p>
+                        <p class="text-green-600 font-medium"><span class="text-gray-500 text-sm">Starts at</span>
+                            ₦11,286.43</p>
+                    </div>
+
+                    <div
+                        class="room-card p-4 border border-gray-200 rounded-xl hover:border-green-300 hover:bg-green-50 transition-all duration-200 cursor-pointer">
+                        <h4 class="font-bold text-lg mb-2">3 Bedroom Duplex</h4>
+                        <p class="text-gray-600 text-sm mb-3">Our Lite Regular cleaning ensures your Cleaning Pro cleans
+                            and tidies home surfaces. Service duration up to 3hrs 30mins.</p>
+                        <p class="text-green-600 font-medium"><span class="text-gray-500 text-sm">Starts at</span>
+                            ₦16,661.43</p>
+                    </div>
+
+                    <div
+                        class="room-card p-4 border border-gray-200 rounded-xl hover:border-green-300 hover:bg-green-50 transition-all duration-200 cursor-pointer">
+                        <h4 class="font-bold text-lg mb-2">4 Bedroom Duplex</h4>
+                        <p class="text-gray-600 text-sm mb-3">Our Lite Regular cleaning ensures your Cleaning Pro cleans
+                            and tidies home surfaces. Service duration up to 2hrs 30mins.</p>
+                        <p class="text-green-600 font-medium"><span class="text-gray-500 text-sm">Starts at</span>
+                            ₦20,961.43</p>
+                    </div>
+
+                    <div
+                        class="room-card p-4 border border-gray-200 rounded-xl hover:border-green-300 hover:bg-green-50 transition-all duration-200 cursor-pointer">
+                        <h4 class="font-bold text-lg mb-2">5 Bedroom Duplex</h4>
+                        <p class="text-gray-600 text-sm mb-3">Our Lite Regular cleaning ensures your Cleaning Pro cleans
+                            and tidies home surfaces. Service duration up to 2hrs 30mins.</p>
+                        <p class="text-green-600 font-medium"><span class="text-gray-500 text-sm">Starts at</span>
+                            ₦23,111.43</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Frequency Selection Modal -->
+        <div id="frequencyModal" class="bg-white rounded-xl shadow-2xl w-full max-w-md mx-4 hidden">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800">Select Frequency</h3>
+                        <div class="flex items-center text-green-600 text-sm mt-1">
+                            <span id="selectedRoom">1 Bedroom Flat</span>
+                        </div>
+                    </div>
+                    <button id="backToRoom" class="text-gray-500 hover:text-gray-700">
+                        <i class="bi bi-arrow-left text-xl"></i>
+                    </button>
+                </div>
+
+                <div class="space-y-3">
+                    <button
+                        class="frequency-option w-full text-left p-4 border border-gray-200 rounded-xl hover:border-green-300 hover:bg-green-50 transition-all duration-200">
+                        <span class="font-medium">One Time</span>
+                    </button>
+
+                    <button
+                        class="frequency-option w-full text-left p-4 border border-gray-200 rounded-xl hover:border-green-300 hover:bg-green-50 transition-all duration-200">
+                        <span class="font-medium">Twice Monthly Cleaning</span>
+                    </button>
+
+                    <button
+                        class="frequency-option w-full text-left p-4 border border-gray-200 rounded-xl hover:border-green-300 hover:bg-green-50 transition-all duration-200">
+                        <span class="font-medium">Weekly Cleaning</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Modal -->
+        <div id="summaryModal" class="bg-white rounded-xl shadow-2xl w-full max-w-md mx-4 hidden">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800">Order Summary</h3>
+                    <button id="backToFrequency" class="text-gray-500 hover:text-gray-700">
+                        <i class="bi bi-arrow-left text-xl"></i>
+                    </button>
+                </div>
+
+                <div class="space-y-4 border border-gray-200 rounded-xl p-4 mb-6">
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Service:</span>
+                        <span class="font-medium" id="summaryService">Lite Regular Cleaning</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Room Type:</span>
+                        <span class="font-medium" id="summaryRoom">1 Bedroom Flat</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-600">Frequency:</span>
+                        <span class="font-medium" id="summaryFrequency">One Time</span>
+                    </div>
+                    <div class="flex justify-between pt-3 border-t border-gray-200 mt-2">
+                        <span class="text-gray-600 font-bold">Total Price:</span>
+                        <span class="text-green-600 font-bold" id="summaryPrice">₦9,136.43</span>
+                    </div>
+                </div>
+
+                <button id="continueToDate"
+                    class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-xl transition-colors duration-300">
+                    Continue to Date Selection
+                </button>
+            </div>
+        </div>
+
+        <!-- Date Selection Modal -->
+        <div id="dateModal" class="bg-white rounded-xl shadow-2xl w-full max-w-md mx-4 hidden">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800">Select Date & Time</h3>
+                    <button id="backToSummary" class="text-gray-500 hover:text-gray-700">
+                        <i class="bi bi-arrow-left text-xl"></i>
+                    </button>
+                </div>
+
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Preferred Date</label>
+                        <input type="date"
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 mb-2">Preferred Time</label>
+                        <input type="time"
+                            class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500">
+                    </div>
+
+                    <button id="confirmBooking"
+                        class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-xl transition-colors duration-300 mt-4">
+                        Confirm Booking
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="bg-green-600 text-white pt-16 pb-8 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
@@ -465,11 +734,13 @@
                     <ul class="space-y-3">
                         <li><a href="index.html" class="text-white hover:text-white transition-colors text-sm">Home</a>
                         </li>
-                        <li><a href="#" class="text-white hover:text-white transition-colors text-sm">Contact Us</a>
+                        <li><a href="contactus.html"
+                                class="text-white hover:text-white transition-colors text-sm">Contact Us</a>
                         </li>
-                        <li><a href="#" class="text-white hover:text-white transition-colors text-sm">About Us</a>
+                        <li><a href="aboutus.html" class="text-white hover:text-white transition-colors text-sm">About
+                                Us</a>
                         </li>
-                        <li><a href="#" class="text-white hover:text-white transition-colors text-sm">FAQs</a>
+                        <li><a href="faqs.html" class="text-white hover:text-white transition-colors text-sm">FAQs</a>
                         </li>
                     </ul>
                 </div>
@@ -511,6 +782,7 @@
 
     <!-- JavaScript -->
     <script src="script/home.js"></script>
+    <script src="script/modal.js"></script>
 </body>
 
 </html>
